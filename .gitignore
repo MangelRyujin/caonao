@@ -1,2 +1,5 @@
 .vscode
-db.squlite3
+
+#ignore data base
+db.sqlite3
+
