@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/77987598/how-to-solve-logout-error-when-using-django-jazzmin?newreg=bc55b0a3f8c34fd59ae3b01dd258b426
