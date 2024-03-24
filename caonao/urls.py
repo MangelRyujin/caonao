@@ -32,7 +32,7 @@ urlpatterns = [
     path('appeducacion/',include('apps.educacion.urls')),
     path('appcultura/',include('apps.cultura.urls')),
     path('appacueducto/',include('apps.acueducto.urls')),
-    path('inicio/',home_view,name='home_view'),
+    path('',home_view,name='home_view'),
     path('preguntas_frecuentes/',fq_view,name='fq_view'),
     path('sobre_nosotros/',about_us_view,name='about_us_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
