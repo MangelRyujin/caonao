@@ -1,7 +1,7 @@
 from django.urls import path
-from apps.cultura.views.cultura_views import cultura_list_view,cultura_detail_view
+from apps.cultura.views.cultura_views import culture_list_view,culture_detail_view
 
 urlpatterns = [
-    path('cultura/',cultura_list_view,name='cultura_list_view'),
-    path('cultura/<int:pk>', cultura_detail_view, name='cultura_detail_view'),
+    path('cultura/',culture_list_view,name='culture_list_view'),
+    path('cultura/<int:pk>', culture_detail_view, name='culture_detail_view'),
 ]

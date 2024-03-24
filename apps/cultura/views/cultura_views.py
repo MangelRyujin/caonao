@@ -3,13 +3,13 @@ from apps.cultura.models import CultureInstitution, CultureProject
 
 
 # List all cultural institutions
-def cultura_list_view(request):
+def culture_list_view(request):
     culture_institutions= CultureInstitution.objects.filter(active=True)
-    return render(request,'cultura_list_view.html',culture_institutions)
+    return render(request,'culture_list_view.html',culture_institutions)
 
 
 # List the pk cultural institution with all its active projects
-def cultura_detail_view(request,pk):
+def culture_detail_view(request,pk):
     culture_institution= CultureInstitution.objects.filter(
         pk=pk,
         active=True
@@ -19,4 +19,4 @@ def cultura_detail_view(request,pk):
         active=True
     )
     context = {'culture':culture_institution, 'projects':projects}
-    return render(request,'cultura_detail_view.html',context)
+    return render(request,'culture_detail_view.html',context)

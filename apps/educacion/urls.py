@@ -1,7 +1,8 @@
 from django.urls import path
-from apps.educacion.views.educacion_views import educacion_view
+from apps.educacion.views.educacion_views import education_detail_view, education_list_view
 
 
 urlpatterns = [
-    path('educacion/',educacion_view,name='educacion_view'),
+    path('educacion/',education_list_view,name='education_list_view'),
+    path('educacion/<int:pk>', education_detail_view, name='education_detail_view'),
 ]
