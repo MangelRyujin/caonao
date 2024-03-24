@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.oficoda.views.oficoda_views import oficoda_view
+from apps.oficoda.views.office_views import oficoda_view
 
 
 urlpatterns = [

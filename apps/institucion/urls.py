@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.institucion.views.instituciones_view import institucion_view
+from apps.institucion.views.institutions_view import institucion_view
 
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.cultura.views.cultura_views import culture_list_view,culture_detail_view
+from apps.cultura.views.culture_views import culture_list_view,culture_detail_view
 
 urlpatterns = [
     path('cultura/',culture_list_view,name='culture_list_view'),

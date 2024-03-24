@@ -1,7 +1,7 @@
 from django.urls import path
-from apps.acueducto.views.acueducto_views import acueducto_view
+from apps.acueducto.views.waterPlanning_views import waterPlanning_view
 
 
 urlpatterns = [
-    path('acueducto/',acueducto_view,name='acueducto_view'),
+    path('acueducto/',waterPlanning_view,name='waterPlanning_view'),
 ]

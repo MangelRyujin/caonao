@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.educacion.views.educacion_views import education_detail_view, education_list_view
+from apps.educacion.views.education_views import education_detail_view, education_list_view
 
 
 urlpatterns = [
