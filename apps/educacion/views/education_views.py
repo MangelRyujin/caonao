@@ -4,8 +4,11 @@ from apps.educacion.models import EducationInstitution, EducationProject
 
 # List all education institutions
 def education_list_view(request):
-    education_institutions= EducationInstitution.objects.filter(active=True)
-    return render(request,'education_list_view.html',education_institutions)
+    education_list= EducationInstitution.objects.filter(active=True)
+    context = {
+        'education_list': education_list
+    }
+    return render(request,'education_list_view.html',context)
 
 
 # List the pk education institution with all its active projects

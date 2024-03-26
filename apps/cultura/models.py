@@ -9,7 +9,7 @@ from django.core.validators import MinLengthValidator
 # Institution model
 class CultureInstitution(Base):
     """docstring for Institution."""
-    image = models.ImageField('Imagen',upload_to='institution_education/',null=False,blank=False)
+    image = models.ImageField('Imagen',upload_to='institution_culture/',null=False,blank=False)
  
     
     class Meta:

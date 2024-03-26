@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+
+{% block contend %}
+<table class="table table-hover" style="margin-top: 5%; padding: 5px;">
+    <thead>
+      <tr>
+        <th scope="col">Días</th>
+        {% for aff in affectation %}
+          <th scope="col">{{ aff.in_time }} - {{ aff.out_time }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for aff in affectation %}
+        <tr>
+          <th scope="row">{{ aff.in_date }}</th>
+          {% for time_slot in affectation %}
+            {% if time_slot.in_time == aff.in_time %}
+              <td>{{ time_slot.block }}</td>
+            {% else %}
+              <td></td> 
+            {% endif %}
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
