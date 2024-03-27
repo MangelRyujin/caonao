@@ -36,7 +36,7 @@ class Circuit(models.Model):
 # Affectation model
 class Affectation(DTA):
     """docstring for Affectation."""
-    block = models.ForeignKey(Block, on_delete=models.CASCADE,verbose_name='Bloque', null=False, blank=False)
+    block = models.ForeignKey(Block, on_delete=models.CASCADE,verbose_name='Bloque', null=True, blank=True)
     
     class Meta:
         verbose_name= 'Afectación'

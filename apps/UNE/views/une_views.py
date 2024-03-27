@@ -2,12 +2,12 @@ from django.shortcuts import render
 from apps.UNE.models import Affectation, Block, Circuit
 
 
-# vista para la UNE
+# Create View UNE Table
 def une_view(request):
     blocks = Block.objects.filter(active= True)
     affectation= Affectation.objects.filter(
         active = True
-    )
+    ).order_by('in_date','in_time')
     block_circuit = []
     for block in blocks:
        block_circuit.append({
