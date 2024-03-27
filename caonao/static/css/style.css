@@ -6346,6 +6346,10 @@ button.bg-dark:focus {
   display: inline-flex !important;
 }
 
+.blue{
+  color: var(--blue) !important;
+}
+
 @media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
