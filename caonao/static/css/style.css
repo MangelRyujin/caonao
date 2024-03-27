@@ -7,6 +7,10 @@
  */
 :root {
   --blue: #007bff;
+  --text-color:#007bff;
+  --text-color-active:#ff0000;
+  --btn-background: #007bff;
+  --btn-background-active: #136ccab0;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -9271,11 +9275,13 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #7AB730 !important;
+  /* color: #7AB730 !important; */
+  color: var(--text-color) !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #527a20 !important;
+  /* color: #527a20 !important; */
+  color: var(--text-color-active) !important;
 }
 
 .text-secondary {
