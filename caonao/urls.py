@@ -27,7 +27,7 @@ urlpatterns = [
     path('appune/',include('apps.UNE.urls')),
     path('appsalud/',include('apps.salud.urls')),
     path('appoficoda/',include('apps.oficoda.urls')),
-    path('appinstitucion/',include('apps.institucion.urls')),
+    path('appinstitution/',include('apps.institucion.urls')),
     path('appestado/',include('apps.estado.urls')),
     path('appeducacion/',include('apps.educacion.urls')),
     path('appcultura/',include('apps.cultura.urls')),

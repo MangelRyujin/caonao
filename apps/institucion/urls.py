@@ -1,7 +1,8 @@
 from django.urls import path
-from apps.institucion.views.institutions_view import institucion_view
+from apps.institucion.views.bodega_views import bodega_view,bodega_detail_view
 
 
 urlpatterns = [
-    path('instuticion/',institucion_view,name='institucion_view'),
+    path('institution/',bodega_view,name='institution_view'),
+    path('institution/<int:pk>', bodega_detail_view, name='institution_detail_view'),
 ]

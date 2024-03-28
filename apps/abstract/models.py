@@ -44,16 +44,14 @@ class WeekBase(models.Model):
     )
     in_time = models.TimeField('Hora inicial',null= False, blank=False)
     out_time = models.TimeField('Hora final',null= False, blank=False)
-    init_day_of_week = models.CharField(
+    init_day_of_week = models.IntegerField(
         'Dia inicial del servicio',
-        max_length=1,
         default=0,
         choices=DAYS_OF_WEEK,
         help_text="Selecciona el dia de la semana."
     )
-    end_day_of_week = models.CharField(
+    end_day_of_week = models.IntegerField(
         'Dia final del servicio',
-        max_length=1,
         default=6,
         choices=DAYS_OF_WEEK,
         help_text="Selecciona el dia de la semana."
@@ -80,16 +78,14 @@ class ServiceWeekBase(models.Model):
     in_time = models.TimeField('Hora inicial',null= False, blank=False)
     out_time = models.TimeField('Hora final',null= False, blank=False)
     active = models.BooleanField('Activo', default=True)
-    init_day_of_week = models.CharField(
+    init_day_of_week = models.IntegerField(
         'Dia inicial del servicio',
-        max_length=1,
         default=0,
         choices=DAYS_OF_WEEK,
         help_text="Selecciona el dia de la semana."
     )
-    end_day_of_week = models.CharField(
+    end_day_of_week = models.IntegerField(
         'Dia final del servicio',
-        max_length=1,
         default=6,
         choices=DAYS_OF_WEEK,
         help_text="Selecciona el dia de la semana."

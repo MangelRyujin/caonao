@@ -79,6 +79,7 @@ class Product(models.Model):
     name = models.CharField('Nombre',validators=[MinLengthValidator(3),validate_letters_numbers_and_spaces], max_length=255, blank=False , null=False, unique=True)
     cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)
     active = models.BooleanField(default=True)
+    institution = models.ForeignKey(Institution,on_delete = models.CASCADE, verbose_name='Institución' ,blank= False, null= False,default = 1)
     category = models.ForeignKey(Category, on_delete = models.CASCADE , verbose_name='Categoría')
     
     
