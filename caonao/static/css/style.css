@@ -153,13 +153,13 @@ sup {
 }
 
 a {
-  color: #7AB730;
+  color: #215ead;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #527a20;
+  color: rgb(31, 79, 191);
   text-decoration: underline;
 }
 
@@ -4026,6 +4026,7 @@ input[type="button"].btn-block {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  color:black
 }
 
 .navbar-brand:hover, .navbar-brand:focus {
@@ -4038,6 +4039,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  color: black;
 }
 
 .navbar-nav .nav-link {
