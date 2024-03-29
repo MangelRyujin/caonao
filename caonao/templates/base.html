@@ -66,29 +66,22 @@
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <div class="logo-container"><img class="logo" src="{% static 'img/J.png' %}" alt="jc">
                 <a href="{% url 'home_view'%}" class="navbar-brand">
-                    <img style="padding-left: 5%;width: 100px;" src="{% static 'img/jc.jpg' %}" alt="">
-                </a>
+                    <h1 class="text-primary"><span class="text-dark">ao</span>nao</h1>
+                </a></div>
+                
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a style="color: rgb(31, 79, 191);" href="{% url 'home_view' %}" class="nav-item nav-link active">Inicio</a>
-                        <a href="{% url 'about_us_view' %}" class="nav-item nav-link">Sobre Nosotros</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <a href="package.html" class="nav-item nav-link">Tour Packages</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
-                                <a href="destination.html" class="dropdown-item">Destination</a>
-                                <a href="guide.html" class="dropdown-item">Travel Guides</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            </div>
+                        <a href="{% url 'home_view' %}" class="nav-item nav-link {% if request.path == '/'%} active {% endif %}">Inicio</a>
+                        <a href="{% url 'about_us_view' %}" class="nav-item nav-link {% if request.path == '/sobre_nosotros/'%} active {% endif %}">Sobre Nosotros</a>
+                        <a href="{% url 'service_view' %}" class="nav-item nav-link {% if request.path == '/servicios/'%} active {% endif %}">Servicios</a>
+                        
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        
                     </div>
                 </div>
             </nav>

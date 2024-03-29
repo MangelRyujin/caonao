@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+
+
+{% block contend %}
+<!-- Service Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h1>Servicios</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'education_list_view' %}">
+                            <i class="fa fa-2x fa-graduation-cap mx-auto mb-4"></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Educación</h5>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'culture_list_view' %}">
+                            <i class="fa fa-2x fa-music  mx-auto mb-4"></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Cultura</h5>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'institution_view' %}">
+                            <i class="fa fa-2x fa-handshake mx-auto mb-4"></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Atención a la Población</h5>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'une_view' %}">
+                            <i class="fa fa-2x fa-heartbeat mx-auto mb-4" ></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Salud</h5>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'une_view' %}">
+                            <i class="fa fa-2x fa-bolt mx-auto mb-4" ></i>
+                        </a>
+                        <h5 class="text-primary mb-2">UNE</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero provident explicabo qui? Quidem sunt nisi totam quo, veritatis adipisci illum illo consequatur vel iste molestiae architecto sit natus ipsa tempore deleniti labore harum suscipit quis quia! Optio, ullam debitis architecto labore, ut nostrum sed illo consequatur dolor, ipsum voluptatibus obcaecati!</p>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'oficoda_view' %}">
+                            <i class="fa fa-2x fa-folder mx-auto mb-4" aria-hidden="true"></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Oficoda</h5>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+{% endblock  %}
