@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block contend %}
+     <!-- Packages Start -->
+<!-- Packages Start -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        {% if services %}
+        
+        {% for types in services %}
+            <div class="text-center mb-3 pb-3">
+                <h1>{{type.type}}</h1>
+            </div>
+            <div class="row">
+                
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <a href="{% url 'institution_view' %}">
+                            <i class="fa fa-2x fa-handshake mx-auto mb-4"></i>
+                        </a>
+                        <h5 class="text-primary mb-2">Atención a la Población</h5>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        {% endfor %}
+            
+        
+        {% else %}
+            <div class="text-center mb-3 pb-3">
+                <h1>No existe información disponible</h1>
+            </div>
+        {% endif  %}
+    </div>
+</div>
+<!-- Packages End -->
+
+{% endblock %}

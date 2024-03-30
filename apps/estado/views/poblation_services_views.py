@@ -1,5 +1,13 @@
 from django.shortcuts import render
+from apps.estado.models import ServicePoblation, TypeServicePoblation
 
-# vista para estado
-def estado_view(request):
-    return render(request,'estado_view.html')
+# Poblations Services view
+def poblations_services_view(request):
+    types = TypeServicePoblation.objects.all()
+    poblations_services = []
+    for type_service in types:
+       poblations_services.append({
+           'type': type_service.name,
+           'services': ServicePoblation.objects.filter(active=True,type_service=type_service)
+       })
+    return render(request,'poblations_services_view.html',context={'services':poblations_services})

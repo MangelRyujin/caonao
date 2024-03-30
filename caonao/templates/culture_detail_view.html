@@ -12,18 +12,73 @@
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h1 class="mb-3">{{culture.name}}</h1>
-                        <h4 class="mb-3">{{culture.description}}</h4>
+                        <h1 class="mb-3"> {{culture.name}}</h1>
+                        <h4 class="mb-3"> Dirección: {{culture.address}}</h4><br>
                         
-                        {% for project in projects %}
-                        <h5>{{project.name}}</h5>
-                        <h5>{{project.description}}</h5>
-                        {% endfor %}
+                        <span> {{culture.description}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
+
+    {% if projects %}
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h1>Servicios</h1>
+            </div>
+            <div class="row">
+                <table class="table table-hover" style="margin-top: 5%; padding: 5px;">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Hora</th>
+                      <th scope="col">Descripción</th>
+                        
+                    </tr>
+                  </thead>
+                    <tbody>
+                      
+                       
+                            {% for project in projects %}
+                            <tr>
+                                <td>{{ project.name }}</td>   
+                                {% if project.in_date == project.out_date %}
+                                    <td>{{ project.in_date }}</td>  
+                                {% else %}
+                                    <td>{{ project.in_date }} al {{ project.out_date }}</td>  
+                                {% endif  %}
+                                {% if project.in_time == project.out_time %}
+                                    <td>{{ project.in_time }}</td>   
+                                {% else %}
+                                    <td>{{ project.in_time }}-{{ project.out_time }}</td>   
+                                {% endif  %}
+                                
+                                
+                                <td>{{ project.description }}</td>  
+                            </tr> 
+                            {% endfor %}       
+                       
+                      
+                    </tbody>
+                  </table>
+              </div>
+        </div>
+      </div>
+      
+    {% else %}
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h1>No contiene servicios disponibles</h1>
+            </div>
+            
+        </div>
+      </div>
+      
+    {% endif  %}
 
 {% endblock %}
