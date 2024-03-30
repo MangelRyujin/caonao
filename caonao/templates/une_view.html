@@ -2,32 +2,67 @@
 
 
 {% block contend %}
-<table class="table table-hover" style="margin-top: 5%; padding: 5px;">
-  <thead>
-    <tr>
-      <th scope="col">Días</th>
-        {% for aff in affectation|dictsort:'in_time' %}
-            {% ifchanged %}
-              <th scope="col">{{ aff.in_time }} - {{ aff.out_time }}</th>
-            {% endifchanged %}
-        {% endfor %}
-    </tr>
-  </thead>
-    <tbody>
-      {% regroup affectation by in_date as affectation_by_date %}
-      {% for date_group in affectation_by_date %}
-        <tr>
-          <th scope="row">{{ date_group.grouper }}</th>
-          {% for aff in date_group.list %}
-            {% if aff.block %}
-              <td>{{ aff.block }}</td>
-            {% else %}
-              <td>-</td>
-            {% endif %}
-          {% endfor %}
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+<div class="container-fluid py-5">
+  <div class="container pt-5 pb-3">
+      <div class="text-center mb-3 pb-3">
+          <h1>Bloques</h1>
+      </div>
+          <div class="row">
+            {% for b in blocks %}
+              <div class="col">
+              <h2 scope="">{{ b.block }}</h2>  
+              <ul class="list-group ">
+                {% for c in b.circuit %}
+                      <li class="list-group-item">{{ c.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>  
+  </div>
+</div>
+
+
+<div class="container-fluid py-5">
+  <div class="container pt-5 pb-3">
+      <div class="text-center mb-3 pb-3">
+          <h1>Afectaciones</h1>
+      </div>
+      <div class="row">
+        <table class="table table-hover" style="margin-top: 5%; padding: 5px;">
+          <thead>
+            <tr>
+              <th scope="col">Días</th>
+                {% for aff in affectation|dictsort:'in_time' %}
+                    {% ifchanged %}
+                      <th scope="col">{{ aff.in_time }} - {{ aff.out_time }}</th>
+                    {% endifchanged %}
+                {% endfor %}
+            </tr>
+          </thead>
+            <tbody>
+              {% regroup affectation by in_date as affectation_by_date %}
+              {% for date_group in affectation_by_date %}
+                <tr>
+                  <th scope="row">{{ date_group.grouper }}</th>
+                  {% for aff in date_group.list %}
+                    {% if aff.block %}
+                      <td>{{ aff.block }}</td>
+                    {% else %}
+                      <td>-</td>
+                    {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+
+
 
 {% endblock %}

@@ -27,6 +27,12 @@ def validate_letters_numbers_and_spaces(value):
             f'Contiene caracteres no permitidos. Solo se permiten letras, números y espacios en blanco.'
         )
         
+def validate_text(value):
+    if not re.match(r'^[A-Za-z0-9\sáéíóúÁÉÍÓÚ,:;. -+"]*$', value):
+        raise ValidationError(
+            f'Contiene caracteres no permitidos. Solo se permiten letras, números, espacios en blanco y los caracteres: , : ; . - +  ".'
+        )
+        
 def validate_address(value):
     if not re.match(r'^[A-Za-z0-9\sáéíóúÁÉÍÓÚ\-\#\/]*$', value):
         raise ValidationError(

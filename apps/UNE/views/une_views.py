@@ -14,5 +14,5 @@ def une_view(request):
            'block': block.name,
            'circuit': Circuit.objects.filter(block=block).exclude(active=False)
        })
-    context = {'block': block_circuit, 'affectation': affectation}
+    context = {'blocks': block_circuit, 'affectation': affectation}
     return render(request,'une_view.html',context)

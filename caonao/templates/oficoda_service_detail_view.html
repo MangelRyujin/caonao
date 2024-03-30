@@ -15,15 +15,62 @@
                         <h1 class="mb-3"> Nombre: {{oficoda_service.name}}</h1>
                         <h4 class="mb-3"> Dirección: {{oficoda_service.address}}</h4><br>
                         
-                        <h4> Servicios Disponibles:</h4><hr>
-                        {% for service in services %}
+                        <span> {{oficoda_service.description}}</span>
+                        {% comment %} {% for service in services %}
                         <h5>{{service.name}}</h5><hr>
-                        {% endfor %}
+                        {% endfor %} {% endcomment %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {% if services %}
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h1>Servicios</h1>
+            </div>
+            <div class="row">
+                <table class="table table-hover" style="margin-top: 5%; padding: 5px;">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Horario</th>
+                      <th scope="col">Descripción</th>
+                        
+                    </tr>
+                  </thead>
+                    <tbody>
+                      
+                       
+                            {% for service in services %}
+                            <tr>
+                                <td>{{ service.name }}</td>   
+                                <td>{{ service.get_init_day_of_week_display}} a {{ service.get_end_day_of_week_display}} de {{ service.in_time }}-{{ service.out_time }}</td>   
+                                <td>{{ service.description }}</td>  
+                            </tr> 
+                            {% endfor %}       
+                       
+                      
+                    </tbody>
+                  </table>
+              </div>
+        </div>
+      </div>
+      
+    {% else %}
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h1>No contiene servicios disponibles</h1>
+            </div>
+            
+        </div>
+      </div>
+      
+    {% endif  %}
+
     <!-- About End -->
 
 {% endblock %}

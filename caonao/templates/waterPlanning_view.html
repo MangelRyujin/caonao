@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+
+
+{% block contend %}
+
+
+<div class="container-fluid py-5">
+  <div class="container pt-5 pb-3">
+      <div class="text-center mb-3 pb-3">
+          <h1>Horario de agua</h1>
+      </div>
+      <div class="row">
+        <table class="table table-hover" style="margin-top: 5%; padding: 5px;">
+          <thead>
+            <tr>
+              <th scope="col">Días</th>
+              <th scope="col">Fecha de llegada</th>
+            </tr>
+          </thead>
+            <tbody>
+              {% regroup waters by in_date as waters_by_date %}
+              {% for date_group in waters_by_date %}
+                <tr>
+                  <th scope="row">{{ date_group.grouper }}</th>
+                  {% for water in date_group.list %}
+                    <td> {{ water.in_time }} - {{ water.out_time }} </td>
+                  {% endfor %}
+                </tr>
+              {% endfor %} 
+            </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
