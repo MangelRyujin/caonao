@@ -6,27 +6,36 @@
 <!-- Packages Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <div class="text-center mb-3 pb-3">
-            <h1>Instituciones</h1>
-        </div>
-        <div class="row align-items-stretch">
-            {% for institution in bodega_list %}
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="package-item bg-white h-100 mb-2">
-                    <img class="img-fluid" src="{{institution.image.url}}" alt="">
-                    <div class="p-4 d-flex flex-column">
-                        <div class="mb-3">
-                            <small><i class="fa fa-map-marker-alt text-primary mr-2">{{institution.address}}</i></small>
-                        </div>
-                        <p class="h5 text-decoration-none">{{institution.type_institution}}</p>
-                        <a class="h5 text-decoration-none" href="{% url 'institution_detail_view' pk=institution.pk %}">{{institution.name}}</a>
-                    </div>
-                </div>
+        
+        {% if institutions_type %}
+            <div class="text-center mb-3 pb-3">
+                <h1>Instituciones</h1>
             </div>
-            {% endfor %}
-        </div>
+            <div class="row">
+                
+                {% for type in institutions_type %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                            <a href="{% url 'institutions_type_view' type=type.name %}">
+                                <i class="fa fa-2x fa-graduation-cap mx-auto mb-4"></i>
+                            </a>
+                            <h5 class="text-primary mb-2">{{type.name}}</h5>
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+    
+            </div>
+        {% else %}
+            <div class="text-center mb-3 pb-3">
+                <h1>No existe información disponible</h1>
+            </div>
+        {% endif %}
+            
+        
     </div>
 </div>
+
 <!-- Packages End -->
 
 {% endblock %}
