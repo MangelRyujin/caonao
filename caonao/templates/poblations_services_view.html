@@ -6,26 +6,54 @@
 <!-- Packages Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        {% if services %}
+        {% if poblations_services %}
         
-        {% for types in services %}
-            <div class="text-center mb-3 pb-3">
-                <h1>{{type.type}}</h1>
-            </div>
-            <div class="row">
-                
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <a href="{% url 'institution_view' %}">
-                            <i class="fa fa-2x fa-handshake mx-auto mb-4"></i>
-                        </a>
-                        <h5 class="text-primary mb-2">Atención a la Población</h5>
-                        
-                    </div>
+        {% for poblation in poblations_services %}
+            
+            {% if poblation.services%}
+                <div class="text-center mb-3 pb-3">
+                    <h1>{{poblation.type}}</h1>
                 </div>
+                <div class="row">
+                    
+                    {% for service in  poblation.services %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                                    <i class="fa fa-2x fa-handshake mx-auto mb-4"></i>
+                                <h5 class="text-primary mb-2">{{service.name}}</h5>
+                                <span class=" text-primary">Dirección: <p class="text-dark">{{service.address}}</p> </span>
+                                
+                                {% if service.init_day_of_week == service.end_day_of_week %}
+                                <span class=" text-primary">Días<p class="text-dark">{{service.init_day_of_week}}</p></span>
+                                {% else %}
+                                    <span class=" text-primary">Días<p class="text-dark">{{service.init_day_of_week}} a {{service.end_day_of_week}}</p></span>
+                                {% endif %}
+                              
+                                {% if service.in_time == service.out_time %}
+                                <span class=" text-primary">Horario<p class="text-dark">{{service.in_time}}</p></span>
+                                  
+                                {% else %}
+                                    <span class=" text-primary">Horario<p class="text-dark">{{service.in_time}} a {{service.out_time}}</p></span>
+                                  
+                                {% endif %}
+                                {% if service.description %}
+                                    <span class="">{{service.description}}</span>
+                                  
+                                {% else %}
+                                    <span class=""></span>
+                                {% endif %}
+                                    
+                                
+                            </div>
+                        </div>
+                    {% endfor %}
+                        
+                    
+                    
+                </div>     
+            {% endif %}
                 
-            </div>
+            
             
         {% endfor %}
             

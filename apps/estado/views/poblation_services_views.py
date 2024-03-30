@@ -10,4 +10,4 @@ def poblations_services_view(request):
            'type': type_service.name,
            'services': ServicePoblation.objects.filter(active=True,type_service=type_service)
        })
-    return render(request,'poblations_services_view.html',context={'services':poblations_services})
+    return render(request,'poblations_services_view.html',context={'poblations_services':poblations_services})
