@@ -16,10 +16,7 @@ def pharmacy_detail_view(request,pk):
         active = True
     ).first()
 
-    salepharmacy = SalePharmacy.objects.filter(
-        pharmacy = pharmacy,
-        active = True
-    )
+    salepharmacy = SalePharmacy.objects.filter(pharmacy=pk)
 
     context = {
         'pharmacy': pharmacy,

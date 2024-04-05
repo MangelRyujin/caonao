@@ -78,18 +78,19 @@ class ServicePolyclinics(ServiceWeekBase):
 class SalePharmacy(models.Model):
     """docstring for SalePharmacy."""
     DAYS_OF_WEEK = (
-        (0, 'Domingo'),
-        (1, 'Lunes'),
-        (2, 'Martes'),
-        (3, 'Miércoles'),
-        (4, 'Jueves'),
-        (5, 'Viernes'),
-        (6, 'Sábado'),
+        ('Domingo', 'Domingo'),
+        ('Lunes', 'Lunes'),
+        ('Martes', 'Martes'),
+        ('Miércoles', 'Miércoles'),
+        ('Jueves', 'Jueves'),
+        ('Viernes', 'Viernes'),
+        ('Sábado', 'Sábado'),
     )
     
     day_of_week = models.CharField(
         'Dia de venta',
-        max_length=1,
+        max_length=10,
+        default='Domingo',
         choices=DAYS_OF_WEEK,
         help_text="Selecciona el dia de la semana."
     )

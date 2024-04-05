@@ -16,10 +16,7 @@ def consultingroom_detail_view(request,pk):
         active = True
     ).first()
 
-    services = ServiceConsultingRoom.objects.filter(
-         consultingroom = consultingroom,
-         active = True
-    )
+    services = ServiceConsultingRoom.objects.filter(active=True,consulting_room=pk)
     context = {
     'consultingroom': consultingroom,
     'services': services,

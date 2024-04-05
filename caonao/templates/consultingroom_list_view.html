@@ -7,18 +7,18 @@
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h1>Policlínico</h1>
+            <h1>Consultorio</h1>
         </div>
         <div class="row align-items-stretch">
-            {% for pol in polyclinics %}
+            {% for con in consultingroom %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="package-item bg-white h-100 mb-2">
-                    <img class="img-fluid" src="{{pol.image.url}}" alt="">
+                    <img class="img-fluid" src="{{con.image.url}}" alt="">
                     <div class="p-4 d-flex flex-column">
                         <div class="mb-3">
-                            <small><i class="fa fa-map-marker-alt text-primary mr-2">{{pol.address}}</i></small>
+                            <small><i class="fa fa-map-marker-alt text-primary mr-2">{{con.address}}</i></small>
                         </div>
-                        <a class="h5 text-decoration-none" href="{% url 'polyclinics_detail_view' pk=pol.pk %}">{{pol.name}}</a>
+                        <a class="h5 text-decoration-none" href="{% url 'consultingroom_detail_view' pk=con.pk %}">{{con.name}}</a>
                     </div>
                 </div>
             </div>
