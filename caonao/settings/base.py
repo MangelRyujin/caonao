@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "apps.oficoda",
     "apps.estado",
     "apps.institucion",
+    "apps.joven_club",
 
 ]
 

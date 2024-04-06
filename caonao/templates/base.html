@@ -78,7 +78,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{% url 'home_view' %}" class="nav-item nav-link {% if request.path == '/'%} active {% endif %}">Inicio</a>
                         <a href="{% url 'about_us_view' %}" class="nav-item nav-link {% if request.path == '/sobre_nosotros/'%} active {% endif %}">Sobre Nosotros</a>
-                        <a href="{% url 'service_view' %}" class="nav-item nav-link {% if request.path == '/servicios/'%} active {% endif %}">Servicios</a>
+                        <a href="{% url 'joven_club_view' %}" class="nav-item nav-link {% if request.path == '/servicios/'%} active {% endif %}">Servicios</a>
                         
                         </div>
                         
@@ -98,8 +98,8 @@
     <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                <a href="{% url 'home_view'%}" class="navbar-brand">
+                    <h1 class="text-primary"><span class="text-white">Cao</span>nao</h1>
                 </a>
                 <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
                 <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
@@ -139,15 +139,6 @@
                 <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
                 <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-3">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

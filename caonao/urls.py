@@ -19,7 +19,6 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from caonao.views.service_views import service_view
 from .views.home_views import home_view
 from .views.fq_views import fq_view
 from .views.about_us_views import about_us_view
@@ -34,8 +33,8 @@ urlpatterns = [
     path('appeducacion/',include('apps.educacion.urls')),
     path('appcultura/',include('apps.cultura.urls')),
     path('appacueducto/',include('apps.acueducto.urls')),
+    path('appjc/',include('apps.joven_club.urls')),
     path('',home_view,name='home_view'),
     path('preguntas_frecuentes/',fq_view,name='fq_view'),
     path('sobre_nosotros/',about_us_view,name='about_us_view'),
-    path('servicios/',service_view,name='service_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
