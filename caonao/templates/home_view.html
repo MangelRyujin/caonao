@@ -14,7 +14,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Caonao</h4>
                             <h1 class="display-3 text-white mb-md-4">Recorra nuestras Instituciones</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{% url 'education_list_view'%}" class="btn btn-primary py-md-3 px-md-5 mt-2">Vaya ahora</a>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Caonao</h4>
                             <h1 class="display-3 text-white mb-md-4">Recorra nuestras Instituciones</h1>
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{% url 'institution_view'%}" class="btn btn-primary py-md-3 px-md-5 mt-2">Vaya ahora</a>
                         </div>
                     </div>
                 </div>
@@ -52,23 +52,16 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg'%}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/Joven Club.jpeg'%}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sobre Nosotros</h6>
                         <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
                         <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
-                        <div class="row mb-4">
-                            <div class="col-6">
-                                <img class="img-fluid" src="{% static 'img/about-1.jpg'%}" alt="">
-                            </div>
-                            <div class="col-6">
-                                <img class="img-fluid" src="{% static 'img/about-2.jpg'%}" alt="">
-                            </div>
-                        </div>
-                        <a href="" class="btn btn-primary mt-1">Book Now</a>
+                        
+                        <a href="{% url 'joven_club_view' %}" class="btn btn-primary mt-1">Nuestros Servicios</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +87,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="service-item bg-white text-center mb-2 py-5 px-4">
-                        <a href="{% url 'education_list_view' %}">
+                        <a href="{% url 'culture_list_view' %}">
                             <i class="fa fa-2x fa-music mx-auto mb-4"></i>
                         </a>
                         <h5 class="text-primary mb-2">Cultura</h5>
